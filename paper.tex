@@ -28,6 +28,10 @@
 \usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{times}
+\usepackage{multibib}
+\newcites{orgref}{Publications by Organizers}
+\newcites{ref}{Other References}
+
 
 %% We encourage the use of mathptmx for consistent usage of times font
 %% throughout the proceedings. However, if you encounter conflicts
@@ -156,31 +160,32 @@ visualization design. However, much of this understanding has not, in
 general, been translated into new designs for our backend
 infrastructure. We think now is the right time to have a discussion of
 backend design for interactive data analysis. Following the principle
-of ``No One Size Fits All'' in designing databases [7], recent
+of ``No One Size Fits All'' in designing databases~\citeref{stonebraker2005one}, recent
 publications by the organizers have shown that by taking advantage of
 needs and limitations of interactive visualization systems, databases
 can be optimized by making tradeoffs in novel and interesting
-ways. For example, imMens [5], profiler [2], and nanocubes [4] have
+ways. For example, imMens~\citeorgref{Liu:2013:IRT}, profiler~\citeorgref{Kandel:2012:PIS}, and nanocubes~\citeorgref{Lins:2013:NFR} have
 shown that careful algorithm design can enable extremely fast
-interactive visualizations of massive data. Scalr [3] has shown that
+interactive visualizations of massive data. Scalr~\citeorgref{Battle:2013:DRO} has shown that
 traditional query planners can fruitfully take advantage of perceptual
-and resolution limits. ForeCache [6] utilizes a predictive prefetching
+and resolution limits. ForeCache~\citeorgref{Battle:2015:VLDB} utilizes a predictive prefetching
 strategy by learning a user’s interaction patterns and prefetching
 data from server to support real-time visual exploration. Lastly,
-SampleAction [1] takes advantage of streaming databases and
+SampleAction~\citeorgref{Fisher:2012:TMI} takes advantage of streaming databases and
 incorporates HCI principles that users need immediate feedback, but
 are willing to wait for high-fidelity results.
+
 
 In addition to the work by the organizers, researchers in the database
 community have also made significant stride in developing databases
 specifically for interactive visualization, analysis, and exploration
 of data. For example, systems like Tableau utilizes columnar databases
 which provide speedups for typical visual analytics tasks that require
-operations across columns (instead of the traditional rows). BlinkDB
-[8] uses a sampling strategy to build a smaller, but representative
-database from a larger one. Map-D [9] takes advantage of modern
+operations across columns (instead of the traditional rows). BlinkDB~\citeref{Agarwal:2013:BQW}
+uses a sampling strategy to build a smaller, but representative
+database from a larger one. Map-D~\citeref{mapd} takes advantage of modern
 graphics card capabilities and resulted in a specialized database that
-runs entirely within (an array of) graphics cards. Finally, SciDB [10]
+runs entirely within (an array of) graphics cards. Finally, SciDB~\citeref{cudre2009demonstration}
 breaks away from the traditional relational data structure and is
 designed to store and query multidimensional scientific data that are
 stored in an array-based structure.
@@ -193,8 +198,7 @@ agenda that focuses on the backend technologies. In this proposed
 workshop, we seek to invite members from the database community
 (including authors of the aforementioned papers) to meet with the VIS
 community and begin such dialogs. As many of these database
-researchers are current collaborators of the organizers (see Section
-XXX below for a list of intended invitees), we believe that the
+researchers are current collaborators of the organizers (see Section~\ref{sec:invitees} below for a list of intended invitees), we believe that the
 organizing team is well suited to influence research not only in
 information visualization, but in these other related fields as well.
 
@@ -230,9 +234,10 @@ organizing team to be exclusive, it is our belief that a more focused
 discussion will have a higher likelihood towards developing a cohesive
 research agenda. Note that this is not an extraordinary proposal: such
 a format has been successfully employed by other workshops in previous
-years at VIS, most notably by the BELIV workshop~\cite{beliv}.
+years at VIS, most notably by the BELIV workshop~\citeref{beliv}.
 
 \section{List of Participants and Invitees}
+\label{sec:invitees}
 
 As noted earlier, it is our hope that this workshop will include both
 attendees from the VIS and database communities. However, since the
@@ -241,11 +246,11 @@ members of the database community and invite them to attend the
 workshop. We will seek a mix of researchers in different stages of
 their careers, together with researchers from different companies in
 the industry. If possible, we will also seek to identify a more senior
-person from this invited list as the keynote speaker for the workshop.
+person from this invited list as the keynote speaker for the workshop.\\
 
-Senior researchers:
-
+\noindent \textbf{Senior researchers}:
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Sam Madden (MIT)
 \item Joe Hellerstein (Berkeley, Trifacta)
 \item Mike Stonebraker (MIT)
@@ -253,8 +258,9 @@ Senior researchers:
 \item Stan Zdonik (Brown)
 \end{itemize}
 
-Early or mid-career researchers:
+\noindent \textbf{Early or mid-career researchers}:
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Eugene Wu (Columbia)
 \item Aaron Elmore (U. Chicago)
 \item Joey Gonzalez (Berkeley AMPLab, CMU, GraphLab/Dato)
@@ -265,8 +271,9 @@ Early or mid-career researchers:
 \item Mike Cafarella (Michigan)
 \end{itemize}
 
-Junior Researchers: (Students, etc)
+\noindent \textbf{Junior Researchers (Students, etc.)}: 
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Manasi Vartak (MIT, SeeDB)
 \item Todd Mostak (MapD)
 \item Leilani Battle (MIT, Tile Prefetching)
@@ -274,8 +281,9 @@ Junior Researchers: (Students, etc)
 \item Holger Pirk (MIT postdoc, databases)
 \end{itemize}
 
-Relevant companies we will reach out to:
+\noindent \textbf{Relevant companies we will reach out to}:
 \begin{itemize}
+\setlength\itemsep{0em}
 \item Tableau
 \item Trifacta
 \item Paradigm4
@@ -290,17 +298,6 @@ We should ask for a setup split halfway with seats for lectures and space for po
 
 TBD.
 
-\section{Related publications by Organizers}
-\cite{Battle:2013:DRO, Lins:2013:NFR, Liu:2013:IRT, Fisher:2012:TMI, Kandel:2012:PIS}
-[6] Battle, Chang, Stonebraker. Dynamic Prefetching of Data Tiles for Interactive Visualization. VLDB, 2015 (Conditionally Accepted).
-
-\section{References}
-
-\cite{Agarwal:2013:BQW}
-
-[7] Stonebraker and Cetintemel. "One Size Fits All": An Idea Whose Time Has Come and Gone. ICDE '05
-[9] Mostak. An overview of MapD. http://map-d.com/docs/mapdwhitepaper. 2014
-[10] Cudre-Mauroux et al. SciDB: A Science-Oriented DBMS. VLDB 2009.
 
 \section{Organizer Bios}
 
@@ -312,7 +309,13 @@ TBD.
 
 \paragraph*{Carlos Scheidegger} is an Assistant Professor in the Department of Computer Science at the University of Arizona since 2014. Prior to joining the Arizona faculty, Carlos worked at AT\&T Research from 2009 to 2014, where he helped develop award-winning, open-source techniques for massive data sources (http://nanocubes.net). His current research interests are in the intersection of large-scale data analysis, information visualization, data management, and software infrastructure for scientific collaboration. His research has received multiple awards at top venues in data visualization (IEEE InfoVis, IEEE SciVis, EuroVis).
 
-\bibliographystyle{abbrv}
-\bibliography{paper}
+\bibliographystyleorgref{plain}
+\bibliographyorgref{orgref}
+
+\bibliographystyleref{plain}
+\bibliographyref{ref}
+
+%\bibliographystyle{abbrv}
+%\bibliography{paper}
 \end{document}
 
