@@ -28,6 +28,7 @@
 \usepackage{mathptmx}
 \usepackage{graphicx}
 \usepackage{times}
+\usepackage{enumitem}
 \usepackage{multibib}
 \newcites{orgref}{Publications by Organizers}
 \newcites{ref}{Other References}
@@ -129,8 +130,7 @@ technology, algorithm design, and information visualization techniques.
 In the current design of database and analytics systems, interactive
 data analysis concerns are usually an afterthought. Although recent
 architectural changes like columnar databases have enabled faster
-visualization systems, these sorts of innovations have been designed
-less for visualization than for accelerating queries in general. In
+visualization systems, these databases are often not specified optimized for data visualization purposes but for general acceleration of queries. In
 this workshop, we will explore the consequences of pushing the
 concerns of interactive data analysis deep into the ``computational
 fabric'' of our systems: the back-end infrastructure of data storage,
@@ -246,11 +246,10 @@ members of the database community and invite them to attend the
 workshop. We will seek a mix of researchers in different stages of
 their careers, together with researchers from different companies in
 the industry. If possible, we will also seek to identify a more senior
-person from this invited list as the keynote speaker for the workshop.\\
+person from this invited list as the keynote speaker for the workshop.
 
-\noindent \textbf{Senior researchers}:
-\begin{itemize}
-\setlength\itemsep{0em}
+\subsection*{Senior researchers}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Sam Madden (MIT)
 \item Joe Hellerstein (Berkeley, Trifacta)
 \item Mike Stonebraker (MIT)
@@ -258,9 +257,8 @@ person from this invited list as the keynote speaker for the workshop.\\
 \item Stan Zdonik (Brown)
 \end{itemize}
 
-\noindent \textbf{Early or mid-career researchers}:
-\begin{itemize}
-\setlength\itemsep{0em}
+\subsection*{Early or mid-career researchers}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Eugene Wu (Columbia)
 \item Aaron Elmore (U. Chicago)
 \item Joey Gonzalez (Berkeley AMPLab, CMU, GraphLab/Dato)
@@ -271,9 +269,8 @@ person from this invited list as the keynote speaker for the workshop.\\
 \item Mike Cafarella (Michigan)
 \end{itemize}
 
-\noindent \textbf{Junior Researchers (Students, etc.)}: 
-\begin{itemize}
-\setlength\itemsep{0em}
+\subsection*{Junior Researchers (Students, etc.)}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Manasi Vartak (MIT, SeeDB)
 \item Todd Mostak (MapD)
 \item Leilani Battle (MIT, Tile Prefetching)
@@ -281,9 +278,8 @@ person from this invited list as the keynote speaker for the workshop.\\
 \item Holger Pirk (MIT postdoc, databases)
 \end{itemize}
 
-\noindent \textbf{Relevant companies we will reach out to}:
-\begin{itemize}
-\setlength\itemsep{0em}
+\subsection*{Relevant companies we will reach out to}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Tableau
 \item Trifacta
 \item Paradigm4
