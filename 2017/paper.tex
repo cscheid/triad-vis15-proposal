@@ -1,0 +1,277 @@
+\documentclass[journal]{vgtc}                % final (journal style)
+%\documentclass[review,journal]{vgtc}         % review (journal style)
+%\documentclass[widereview]{vgtc}             % wide-spaced review
+%\documentclass[preprint,journal]{vgtc}       % preprint (journal style)
+%\documentclass[electronic,journal]{vgtc}     % electronic version, journal
+
+%% Uncomment one of the lines above depending on where your paper is
+%% in the conference process. ``review'' and ``widereview'' are for review
+%% submission, ``preprint'' is for pre-publication, and the final version
+%% doesn't use a specific qualifier. Further, ``electronic'' includes
+%% hyperreferences for more convenient online viewing.
+
+%% Please use one of the ``review'' options in combination with the
+%% assigned online id (see below) ONLY if your paper uses a double blind
+%% review process. Some conferences, like IEEE Vis and InfoVis, have NOT
+%% in the past.
+
+%% Please note that the use of figures other than the optional teaser is not permitted on the first page
+%% of the journal version.  Figures should begin on the second page and be
+%% in CMYK or Grey scale format, otherwise, colour shifting may occur
+%% during the printing process.  Papers submitted with figures other than the optional teaser on the
+%% first page will be refused.
+
+%% These three lines bring in essential packages: ``mathptmx'' for Type 1
+%% typefaces, ``graphicx'' for inclusion of EPS figures. and ``times''
+%% for proper handling of the times font family.
+
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{enumitem}
+\usepackage{multibib}
+\newcites{orgref}{Publications by Organizers}
+\newcites{ref}{Other References}
+
+
+%% We encourage the use of mathptmx for consistent usage of times font
+%% throughout the proceedings. However, if you encounter conflicts
+%% with other math-related packages, you may want to disable it.
+
+%% This turns references into clickable hyperlinks.
+\usepackage[bookmarks,backref=true,linkcolor=black]{hyperref} %,colorlinks
+\hypersetup{
+  pdfauthor = {},
+  pdftitle = {},
+  pdfsubject = {},
+  pdfkeywords = {},
+  colorlinks=true,
+  linkcolor= black,
+  citecolor= black,
+  pageanchor=true,
+  urlcolor = black,
+  plainpages = false,
+  linktocpage
+}
+
+%% If you are submitting a paper to a conference for review with a double
+%% blind reviewing process, please replace the value ``0'' below with your
+%% OnlineID. Otherwise, you may safely leave it at ``0''.
+\onlineid{0}
+
+%% declare the category of your paper, only shown in review mode
+\vgtccategory{Research}
+
+%% allow for this line if you want the electronic option to work properly
+\vgtcinsertpkg
+
+%% In preprint mode you may define your own headline.
+%\preprinttext{To appear in IEEE Transactions on Visualization and Computer Graphics.}
+
+%% Paper title.
+
+\title{DSIA: Data Systems for Interactive Analysis}
+
+%% This is how authors are specified in the journal style
+
+%% indicate IEEE Member or Student Member in form indicated below
+\author{Remco Chang\\
+	\scriptsize Tufts University 
+	\and Danyel Fisher\\
+	\scriptsize Microsoft Research 
+	\and Jeffrey Heer\\
+	\scriptsize University of Washington
+ 	\and Carlos Scheidegger\\
+ 	\scriptsize University of Arizona}
+\authorfooter{
+%% insert punctuation at end of each item
+\item
+ Remco Chang is with Tufts University. email: remco@cs.tufts.edu
+\item
+ Danyel Fisher is with Microsoft Research. email: danyelf@microsoft.com
+\item
+ Jeffrey Heer is with the University of Washington. email: jheer@uw.edu
+\item
+ Carlos Scheidegger is with the University of Arizona. email: cscheid@cs.arizona.edu
+}
+
+%other entries to be set up for journal
+\shortauthortitle{Workshop proposal: TRIAD}
+%\shortauthortitle{Firstauthor \MakeLowercase{\textit{et al.}}: Paper Title}
+
+%% Abstract section.
+\abstract{}
+
+%% Keywords that describe your work. Will show as 'Index Terms' in journal
+%% please capitalize first letter and insert punctuation after last keyword
+\keywords{}
+
+%% ACM Computing Classification System (CCS). 
+%% See <http://www.acm.org/class/1998/> for details.
+%% The ``\CCScat'' command takes four arguments.
+
+\CCScatlist{}
+
+%% Uncomment below to disable the manuscript note
+%\renewcommand{\manuscriptnotetxt}{}
+
+%% Copyright space is enabled by default as required by guidelines.
+%% It is disabled by the 'review' option or via the following command:
+% \nocopyrightspace
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% START OF THE PAPER %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+%% The ``\maketitle'' command must be the first command after the
+%% ``\begin{document}'' command. It prepares and prints the title block.
+\section{Goals}
+%% the only exception to this rule is the \firstsection command
+The goal of this workshop is to foster innovative work in the backend that will support the next generation of interactive data analysis tools. 
+We envision such backends to require novel insights in database technology, algorithm design, and information visualization techniques.
+
+In the current design of database and analytics systems, interactive data visualization and analysis concerns are usually an afterthought. 
+Although recent architectural changes like columnar databases have enabled faster visualization systems, these databases are often not specifically optimized for data visualization purposes but for general acceleration of queries. 
+In this workshop, we will explore the consequences of pushing the concerns of interactive data visualization and analysis deep into the ``computational fabric'' of our systems: the back-end infrastructure of data storage, organization, and retrieval. 
+If we design with the knowledge that every analysis is eventually read by a human, bound by perceptual limitations and latency constraints, what are the consequences for database design, or data analysis and visualization algorithms? 
+Are there fundamental tradeoffs? 
+What can we give up?
+
+There have been previous workshops in VIS that have investigated issues of large data visualization, such as LDAV (and LDAV will be a co-located symposium this year at VIS). 
+Our focus is markedly different from that of LDAV. 
+While LDAV focuses on simulation and imaging data, we believe current backend techniques in information visualization and visual analytics are close to hitting a ceiling in terms of performance. 
+We propose this workshop as a venue to discuss these limits, and fundamental new ways to attack them.
+
+\section{Technical Scope}
+The scope of this workshop will span, among possibly other fields, information visualization, visual analytics, algorithm design, database architecture, and statistics. 
+Although this is clearly a broad scope, the workshop will focus on backends for interactive tools. 
+As a community, visualization researchers have made significant progress in our understanding of perceptual and human-interaction issues behind interactive visualization design. 
+However, much of this understanding has not, in general, been translated into new designs for our backend infrastructure. 
+We think now is the right time to have a discussion of backend design for interactive data analysis. 
+Following the principle of ``No One Size Fits All'' in designing databases~\citeref{stonebraker2005one}, recent publications by the organizers have shown that by taking advantage of the needs and limitations of interactive visualization systems, databases can be optimized by making tradeoffs in novel and interesting
+ways. 
+For example, imMens~\citeorgref{Liu:2013:IRT}, profiler~\citeorgref{Kandel:2012:PIS}, and nanocubes~\citeorgref{Lins:2013:NFR} have shown that careful algorithm design can enable extremely fast interactive visualizations of massive data. 
+Scalr~\citeorgref{Battle:2013:DRO} has shown that traditional query planners can fruitfully take advantage of perceptual and resolution limits. 
+ForeCache~\citeorgref{Battle:2015:VLDB} utilizes a predictive prefetching strategy by learning a user's interaction patterns and prefetching data from the server to support real-time visual data exploration. 
+Lastly, SampleAction~\citeorgref{Fisher:2012:TMI} takes advantage of streaming databases and
+incorporates the HCI principle that users need immediate feedback, but are willing to wait for high-fidelity results.
+
+In addition to the work by the organizers, researchers in the database community have also made significant strides in developing databases specifically for interactive visualization, analysis, and exploration
+of data. 
+For example, systems like Tableau~\citeref{stolte2002polaris} utilize columnar databases which provide speedups for typical visual analytics tasks that require operations across columns (instead of the traditional rows). 
+BlinkDB~\citeref{Agarwal:2013:BQW} uses a sampling strategy to build a smaller, but representative database from a larger one. 
+MapD~\citeref{mapd} takes advantage of modern graphics card capabilities and resulted in a specialized database that runs entirely within (an array of) graphics cards. 
+Finally, SciDB~\citeref{cudre2009demonstration} breaks away from the traditional relational data structure and is designed to efficiently store and query multidimensional scientific data that are stored in an array-based structure. 
+
+Given the increasing number of publications and backend systems that can be tailored or applied to interactive visual exploration of large data, we believe that it is very important for the InfoVis and the
+VAST communities to begin having discussions and to develop a research agenda that focuses on backend technologies. 
+In this proposed workshop, we seek to invite members from the database community (including authors of the aforementioned papers) to meet with the VIS community and begin such dialogs. 
+As many of these database researchers are current collaborators of the organizers (see Section~\ref{sec:invitees} below for a list of intended invitees), we believe that the organizing team is well suited to influence research not only in information visualization, but in these other related fields as well.
+
+\section{Format, Length, and Planned Activities}
+We propose a half-day workshop that focuses on generating discussions between VIS and database researchers. 
+The workshop will solicit submissions of position papers as well as short research papers from both the VIS and database communities. 
+These papers will be reviewed by the organizing team. 
+The authors of the selected top papers will be invited to each give a short presentation of their work (or position).
+
+The goal of the presentation is to allow the attendees to gain an overview of the different perspectives and approaches of data storage, organization, and retrieval techniques that can be tailored specifically to support interactive data visualization and exploration. 
+We anticipate that these presentations will take up approximately the first half of the workshop.
+
+Following a short break, the second half of the workshop will be oriented around open discussions and possibly a question-and-answer session. 
+As we anticipate that members of the two different communities will not have a common language or viewpoint, we believe that the open-ended format will facilitate discussions and general knowledge sharing.
+
+It is relevant to note that the organizing team is also currently seeking a follow-up ``closed-door'' (invitation only) meeting that will take place in the afternoon outside of the main VIS venue. 
+The purpose of this closed-door meeting is to allow for a more intimate discussion between enthusiastic researchers who are actively seeking collaborations across the aisle. 
+Although it is not the goal of the organizing team to be exclusive, it is our belief that a more focused
+discussion will have a higher likelihood towards developing a cohesive research agenda. 
+Note that this is not an extraordinary proposal: such an off-site format has been successfully employed by other workshops in previous years at VIS, most notably by the BELIV workshop~\citeref{beliv}.
+
+\section{List of Participants and Invitees}
+\label{sec:invitees}
+
+As noted earlier, it is our hope that this workshop will include both attendees from the VIS and database communities. 
+However, since the workshop will be located at VIS, we will specifically reach out to members of the database community and invite them to attend the workshop. 
+We will seek a mix of researchers in different stages of their careers, together with researchers from different companies in the industry. 
+If possible, we will also seek to identify a more senior person from this invited list as the keynote speaker for the workshop.
+
+\subsection*{Senior researchers}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
+\item Sam Madden (MIT)
+\item Joe Hellerstein (Berkeley, Trifacta)
+\item Mike Stonebraker (MIT)
+\item Ugur Cetintemel (Brown)
+\item Stan Zdonik (Brown)
+\end{itemize}
+
+\subsection*{Early or mid-career researchers}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
+\item Eugene Wu (Columbia)
+\item Aaron Elmore (U. Chicago)
+\item Joey Gonzalez (Berkeley AMPLab, CMU, GraphLab/Dato)
+\item Bill Howe (UW)
+\item Arnab Nandi (OSU)
+\item Cecilia Aragon (UW)
+\item Jenny Duggan (Northwestern)
+\item Mike Cafarella (Michigan)
+\end{itemize}
+
+\subsection*{Junior researchers (students, etc.)}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
+\item Manasi Vartak (MIT)
+\item Todd Mostak (MapD)
+\item Leilani Battle (MIT)
+\item Dominik Moritz (UW)
+\item Holger Pirk (MIT postdoc)
+\end{itemize}
+
+\subsection*{Relevant companies we will reach out to}
+\begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
+\item Tableau
+\item Trifacta
+\item Paradigm4
+\item Graphistry
+\end{itemize}
+
+
+\section{Requested Facilities}
+
+In order to facilitate both paper presentations and open discussions, we seek to have a room that has space for both seats and for posters.
+A podium with audio/video support will be necessary for the paper presentations.
+In addition, some supplies for sketching and drawing would be beneficial in facilitating group discussions (e.g. big Easel Pads with markers).
+
+\section{Intended Result and Impact of Workshop Results}
+
+There are three goals for this workshop. 
+First, we hope to engage both researchers in the VIS and the database communities.
+Should we be successful in attracting and inviting database researchers, the workshop can serve as a forum for true interdisciplinary discussion and collaboration.
+
+Second, as we will accept both position papers and (short) research papers, we aim to compile the accepted papers into a short proceeding that we will disseminate to the workshop attendees. 
+While we do not anticipate this proceeding to contain cutting-edge research contributions, we do envision the content to serve as a starting point for an open dialog between the communities.
+
+Lastly, depending on the outcomes of these discussions, we aim to sketch out an initial outline for a research agenda for this burgeoning field.
+This research agenda will summarize the current state-of-the-art in both the VIS and database communities concerning backend supports for interactive data visualization and analysis.
+In addition, it will highlight the top challenges that need to be addressed that will hopefully spur future research in this field.
+The four organizers will enlist attendees of the workshop to help author this research agenda with the hope that the resulting paper will be published in a venue that is visible to both the VIS and database communities.
+
+\section{Organizer Bios}
+
+\paragraph*{Remco Chang} is an Assistant Professor in the Computer Science Department at Tufts University. He received his BS from Johns Hopkins University in 1997 in Computer Science and Economics, MSc from Brown University in 2000, and PhD in computer science from UNC Charlotte in 2009. Prior to his PhD, he worked for Boeing developing real-time flight tracking and visualization software, followed by a position at UNC Charlotte as a research scientist. His current research interests include visual analytics, information visualization, and HCI. His research has been funded by NSF, DHS, MIT Lincoln Lab, and Draper. He received the NSF CAREER Award in 2015.
+
+\paragraph*{Danyel Fisher} is a Senior Researcher in information visualization and human-computer interaction at Microsoft Research's VIBE group. His research focuses on ways to help users interact with data more easily. His recent work has looked at ways to make big data analytics faster and more interactive. Danyel received his MS from UC Berkeley, and his PhD from UC Irvine. He tweets at @FisherDanyel.
+
+\paragraph*{Jeffrey Heer} is an Associate Professor of Computer Science \& Engineering at the University of Washington, where he directs the Interactive Data Lab and conducts research on data visualization, human-computer interaction and social computing. The visualization tools developed by his lab (D3.js, Vega, Protovis, Prefuse) are used by researchers, companies and thousands of data enthusiasts around the world. His group's research papers have received awards at the premier venues in Human-Computer Interaction (ACM CHI, UIST, CSCW) and Information Visualization (IEEE InfoVis, VAST, EuroVis). Other awards include MIT Technology Review's TR35 (2009), a Sloan Foundation Research Fellowship (2012), and a Moore Foundation Data-Driven Discovery Investigator award (2014). Jeff holds BS, MS and PhD degrees in Computer Science from UC Berkeley, whom he then betrayed by joining the Stanford faculty (2009-2013). Jeff is also a co-founder of Trifacta, a provider of interactive tools for scalable data transformation.
+
+\paragraph*{Carlos Scheidegger} is an Assistant Professor in the Department of Computer Science at the University of Arizona since 2014. Prior to joining the Arizona faculty, Carlos worked at AT\&T Research from 2009 to 2014, where he helped develop award-winning, open-source techniques for massive data sources (http://nanocubes.net). His current research interests are in the intersection of large-scale data analysis, information visualization, data management, and software infrastructure for scientific collaboration. His research has received multiple awards at top venues in data visualization (IEEE InfoVis, IEEE SciVis, EuroVis).
+
+\bibliographystyleorgref{plain}
+\bibliographyorgref{orgref}
+
+\bibliographystyleref{plain}
+\bibliographyref{ref}
+
+%\bibliographystyle{abbrv}
+%\bibliography{paper}
+\end{document}
+
