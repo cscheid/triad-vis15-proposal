@@ -136,25 +136,28 @@ Collaboration with other communities is essential to ensure integration between 
 The first DSIA workshop was held in VIS 2015 with somewhere around 150 to 200 attendees. 
 We were able to bring in young, but prominent researchers in Databases, including Eugene Wu (Columbia), Arnab Nandi (Ohio State), Aditya Parameswaran (Illinois), Aaron Elmore (Univ of Chicago), Jenny Duggan (Northwestern), Leilani Battle (MIT); as well as senior researchers like Marti Hearst (Berkeley) and Joe Hellerstein (Berkeley, who was also the invited keynote speaker). 
 Overall, the event was successful -- we observed the researchers from both sides interacting with each other, and anecdotally we are aware of a few collaborative projects borne from these discussions. 
-For example, the collaboration between Jean-Daniel Fekete and Tim Kraska (Brown Univ) resulted in a recent TVCG paper.
+For example, the collaboration between Jean-Daniel Fekete and Tim Kraska (Brown University) resulted in a recent TVCG paper~\citeref{zgraggen2016progressive}.
 
 
 \section{Goals}
 %% the only exception to this rule is the \firstsection command
-The goal of this workshop is to foster innovative work in the backend that will support the next generation of interactive data analysis tools. 
+The goal of the 2017 workshop is to continue the community-building activities that started in 2015, which is to foster innovative work in the backend that will support the next generation of interactive data analysis tools. 
 We envision such backends to require novel insights in database technology, algorithm design, and information visualization techniques.
 
 In the current design of database and analytics systems, interactive data visualization and analysis concerns are usually an afterthought. 
 Although recent architectural changes like columnar databases have enabled faster visualization systems, these databases are often not specifically optimized for data visualization purposes but for general acceleration of queries. 
-In this workshop, we will explore the consequences of pushing the concerns of interactive data visualization and analysis deep into the ``computational fabric'' of our systems: the back-end infrastructure of data storage, organization, and retrieval. 
+In this workshop, we will explore the consequences of pushing the concerns of interactive data visualization and analysis deep into the ``computational fabric'' of our systems: the backend infrastructure of data storage, organization, and retrieval. 
 If we design with the knowledge that every analysis is eventually read by a human, bound by perceptual limitations and latency constraints, what are the consequences for database design, or data analysis and visualization algorithms? 
 Are there fundamental tradeoffs? 
 What can we give up?
 
-There have been previous workshops in VIS that have investigated issues of large data visualization, such as LDAV (and LDAV will be a co-located symposium this year at VIS). 
+Beyond DSIA in 2015, here have been previous workshops in VIS that have investigated issues of large data visualization, such as LDAV. 
 Our focus is markedly different from that of LDAV. 
 While LDAV focuses on simulation and imaging data, we believe current backend techniques in information visualization and visual analytics are close to hitting a ceiling in terms of performance. 
 We propose this workshop as a venue to discuss these limits, and fundamental new ways to attack them.
+
+The workshop most similar to DSIA is the HILDA workshop, which was held at SIGMOD in 2016 (and will be held again in 2017 in SIGMOD). 
+The key difference between the two is that the database researchers at HILDA approach the problem from the opposite end as DSIA -- in DSIA we seek to leverage the user's abilities (and limitations) in designing backend systems, in HILDA the researchers start with the backend system and analyze how the system might be useful to the user in data analysis tasks.
 
 \section{Technical Scope}
 The scope of this workshop will span, among possibly other fields, information visualization, visual analytics, algorithm design, database architecture, and statistics. 
@@ -166,7 +169,7 @@ Following the principle of ``No One Size Fits All'' in designing databases~\cite
 ways. 
 For example, imMens~\citeorgref{Liu:2013:IRT}, profiler~\citeorgref{Kandel:2012:PIS}, and nanocubes~\citeorgref{Lins:2013:NFR} have shown that careful algorithm design can enable extremely fast interactive visualizations of massive data. 
 Scalr~\citeorgref{Battle:2013:DRO} has shown that traditional query planners can fruitfully take advantage of perceptual and resolution limits. 
-ForeCache~\citeorgref{Battle:2015:VLDB} utilizes a predictive prefetching strategy by learning a user's interaction patterns and prefetching data from the server to support real-time visual data exploration. 
+ForeCache~\citeorgref{battle2016dynamic} utilizes a predictive prefetching strategy by learning a user's interaction patterns~\citeorgref{brown2014finding} and prefetching data from the server to support real-time visual data exploration. 
 Lastly, SampleAction~\citeorgref{Fisher:2012:TMI} takes advantage of streaming databases and
 incorporates the HCI principle that users need immediate feedback, but are willing to wait for high-fidelity results.
 
@@ -189,10 +192,12 @@ These papers will be reviewed by the organizing team.
 The authors of the selected top papers will be invited to each give a short presentation of their work (or position).
 
 The goal of the presentation is to allow the attendees to gain an overview of the different perspectives and approaches of data storage, organization, and retrieval techniques that can be tailored specifically to support interactive data visualization and exploration. 
-We anticipate that these presentations will take up approximately the first half of the workshop.
+We anticipate that these presentations will take up approximately two thirds of the workshop.
 
-Following a short break, the second half of the workshop will be oriented around open discussions and possibly a question-and-answer session. 
+Following a short break, the last one third of the workshop will be oriented around open discussions and possibly a question-and-answer session. 
 As we anticipate that members of the two different communities will not have a common language or viewpoint, we believe that the open-ended format will facilitate discussions and general knowledge sharing.
+Based on our experience in 2015, a round-table discussion involving 150 to 200 participants is not possible.
+As a result, we envision a panel style discussion where the database researchers sit on stage and the participants from the VIS community can ask them questions and initiate a dialog.
 
 It is relevant to note that the organizing team is also currently seeking a follow-up ``closed-door'' (invitation only) meeting that will take place in the afternoon outside of the main VIS venue. 
 The purpose of this closed-door meeting is to allow for a more intimate discussion between enthusiastic researchers who are actively seeking collaborations across the aisle. 
@@ -212,15 +217,21 @@ If possible, we will also seek to identify a more senior person from this invite
 \begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Sam Madden (MIT)
 \item Joe Hellerstein (Berkeley, Trifacta)
+\item Marti Hearst (Berkeley)
 \item Mike Stonebraker (MIT)
 \item Ugur Cetintemel (Brown)
 \item Stan Zdonik (Brown)
+\item Juliana Freire (NYU)
 \end{itemize}
 
 \subsection*{Early or mid-career researchers}
 \begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=-3pt]
 \item Eugene Wu (Columbia)
-\item Aaron Elmore (U. Chicago)
+\item Aaron Elmore (Chicago)
+\item Tim Kraska (Brown)
+\item Carsten Binning (Brown)
+\item Aditya Parameswaran (UIUC)
+\item Arnab Nandi (Ohio State)
 \item Joey Gonzalez (Berkeley AMPLab, CMU, GraphLab/Dato)
 \item Bill Howe (UW)
 \item Arnab Nandi (OSU)
@@ -235,7 +246,7 @@ If possible, we will also seek to identify a more senior person from this invite
 \item Todd Mostak (MapD)
 \item Leilani Battle (MIT)
 \item Dominik Moritz (UW)
-\item Holger Pirk (MIT postdoc)
+%\item Holger Pirk (MIT postdoc)
 \end{itemize}
 
 \subsection*{Relevant companies we will reach out to}
@@ -244,6 +255,7 @@ If possible, we will also seek to identify a more senior person from this invite
 \item Trifacta
 \item Paradigm4
 \item Graphistry
+\item Autodesk
 \end{itemize}
 
 
@@ -267,9 +279,17 @@ This research agenda will summarize the current state-of-the-art in both the VIS
 In addition, it will highlight the top challenges that need to be addressed that will hopefully spur future research in this field.
 The four organizers will enlist attendees of the workshop to help author this research agenda with the hope that the resulting paper will be published in a venue that is visible to both the VIS and database communities.
 
+\section{Important Dates}
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Need to specify 3 dates:
+(1) date of participation (when the workshop will be held); (2) submission deadline (for the workshop), (3) date by which we'll notice by the authors
+
 \section{Organizer Bios}
 
-\paragraph*{Remco Chang} is an Assistant Professor in the Computer Science Department at Tufts University. He received his BS from Johns Hopkins University in 1997 in Computer Science and Economics, MSc from Brown University in 2000, and PhD in computer science from UNC Charlotte in 2009. Prior to his PhD, he worked for Boeing developing real-time flight tracking and visualization software, followed by a position at UNC Charlotte as a research scientist. His current research interests include visual analytics, information visualization, and HCI. His research has been funded by NSF, DHS, MIT Lincoln Lab, and Draper. He received the NSF CAREER Award in 2015.
+\paragraph*{Remco Chang} is an Associate Professor in the Computer Science Department at Tufts University. He received his BS from Johns Hopkins University in 1997 in Computer Science and Economics, MSc from Brown University in 2000, and PhD in computer science from UNC Charlotte in 2009. Prior to his PhD, he worked for Boeing developing real-time flight tracking and visualization software, followed by a position at UNC Charlotte as a research scientist. His current research interests include visual analytics, information visualization, HCI, and databases. His research has been funded by NSF, DHS, MIT Lincoln Lab, and Draper. He received the NSF CAREER Award in 2015.
 
 \paragraph*{Danyel Fisher} is a Senior Researcher in information visualization and human-computer interaction at Microsoft Research's VIBE group. His research focuses on ways to help users interact with data more easily. His recent work has looked at ways to make big data analytics faster and more interactive. Danyel received his MS from UC Berkeley, and his PhD from UC Irvine. He tweets at @FisherDanyel.
 
