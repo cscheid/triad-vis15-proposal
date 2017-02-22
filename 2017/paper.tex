@@ -136,7 +136,7 @@ Collaboration with other communities is essential to ensure integration between 
 The first DSIA workshop was held in VIS 2015 with somewhere around 150 to 200 attendees. 
 We were able to bring in young, but prominent researchers in Databases, including Eugene Wu (Columbia), Arnab Nandi (Ohio State), Aditya Parameswaran (Illinois), Aaron Elmore (Univ of Chicago), Jenny Duggan (Northwestern), Leilani Battle (MIT); as well as senior researchers like Marti Hearst (Berkeley) and Joe Hellerstein (Berkeley, who was also the invited keynote speaker). 
 Overall, the event was successful -- we observed the researchers from both sides interacting with each other, and anecdotally we are aware of a few collaborative projects borne from these discussions. 
-For example, the collaboration between Jean-Daniel Fekete and Tim Kraska (Brown University) resulted in a recent TVCG paper~\citeref{zgraggen2016progressive}.
+For example, the collaboration between Jean-Daniel Fekete and Tim Kraska (Brown University) resulted in a recent TVCG paper~\cite{zgraggen2016progressive}.
 
 
 \section{Goals}
@@ -165,20 +165,20 @@ Although this is clearly a broad scope, the workshop will focus on backends for 
 As a community, visualization researchers have made significant progress in our understanding of perceptual and human-interaction issues behind interactive visualization design. 
 However, much of this understanding has not, in general, been translated into new designs for our backend infrastructure. 
 We think now is the right time to have a discussion of backend design for interactive data analysis. 
-Following the principle of ``No One Size Fits All'' in designing databases~\citeref{stonebraker2005one}, recent publications by the organizers have shown that by taking advantage of the needs and limitations of interactive visualization systems, databases can be optimized by making tradeoffs in novel and interesting
+Following the principle of ``No One Size Fits All'' in designing databases~\cite{stonebraker2005one}, recent publications by the organizers have shown that by taking advantage of the needs and limitations of interactive visualization systems, databases can be optimized by making tradeoffs in novel and interesting
 ways. 
-For example, imMens~\citeorgref{Liu:2013:IRT}, profiler~\citeorgref{Kandel:2012:PIS}, and nanocubes~\citeorgref{Lins:2013:NFR} have shown that careful algorithm design can enable extremely fast interactive visualizations of massive data. 
-Scalr~\citeorgref{Battle:2013:DRO} has shown that traditional query planners can fruitfully take advantage of perceptual and resolution limits. 
-ForeCache~\citeorgref{battle2016dynamic} utilizes a predictive prefetching strategy by learning a user's interaction patterns~\citeorgref{brown2014finding} and prefetching data from the server to support real-time visual data exploration. 
-Lastly, SampleAction~\citeorgref{Fisher:2012:TMI} takes advantage of streaming databases and
+For example, imMens~\cite{Liu:2013:IRT}, profiler~\cite{Kandel:2012:PIS}, and nanocubes~\cite{Lins:2013:NFR} have shown that careful algorithm design can enable extremely fast interactive visualizations of massive data. 
+Scalr~\cite{Battle:2013:DRO} has shown that traditional query planners can fruitfully take advantage of perceptual and resolution limits. 
+ForeCache~\cite{battle2016dynamic} utilizes a predictive prefetching strategy by learning a user's interaction patterns~\cite{brown2014finding} and prefetching data from the server to support real-time visual data exploration. 
+Lastly, SampleAction~\cite{Fisher:2012:TMI} takes advantage of streaming databases and
 incorporates the HCI principle that users need immediate feedback, but are willing to wait for high-fidelity results.
 
 In addition to the work by the organizers, researchers in the database community have also made significant strides in developing databases specifically for interactive visualization, analysis, and exploration
 of data. 
-For example, systems like Tableau~\citeref{stolte2002polaris} utilize columnar databases which provide speedups for typical visual analytics tasks that require operations across columns (instead of the traditional rows). 
-BlinkDB~\citeref{Agarwal:2013:BQW} uses a sampling strategy to build a smaller, but representative database from a larger one. 
-MapD~\citeref{mapd} takes advantage of modern graphics card capabilities and resulted in a specialized database that runs entirely within (an array of) graphics cards. 
-Finally, SciDB~\citeref{cudre2009demonstration} breaks away from the traditional relational data structure and is designed to efficiently store and query multidimensional scientific data that are stored in an array-based structure. 
+For example, systems like Tableau~\cite{stolte2002polaris} utilize columnar databases which provide speedups for typical visual analytics tasks that require operations across columns (instead of the traditional rows). 
+BlinkDB~\cite{Agarwal:2013:BQW} uses a sampling strategy to build a smaller, but representative database from a larger one. 
+MapD~\cite{mapd} takes advantage of modern graphics card capabilities and resulted in a specialized database that runs entirely within (an array of) graphics cards. 
+Finally, SciDB~\cite{cudre2009demonstration} breaks away from the traditional relational data structure and is designed to efficiently store and query multidimensional scientific data that are stored in an array-based structure. 
 
 Given the increasing number of publications and backend systems that can be tailored or applied to interactive visual exploration of large data, we believe that it is very important for the InfoVis and the
 VAST communities to begin having discussions and to develop a research agenda that focuses on backend technologies. 
@@ -203,7 +203,7 @@ It is relevant to note that the organizing team is also currently seeking a foll
 The purpose of this closed-door meeting is to allow for a more intimate discussion between enthusiastic researchers who are actively seeking collaborations across the aisle. 
 Although it is not the goal of the organizing team to be exclusive, it is our belief that a more focused
 discussion will have a higher likelihood towards developing a cohesive research agenda. 
-Note that this is not an extraordinary proposal: such an off-site format has been successfully employed by other workshops in previous years at VIS, most notably by the BELIV workshop~\citeref{beliv}.
+Note that this is not an extraordinary proposal: such an off-site format has been successfully employed by other workshops in previous years at VIS, most notably by the BELIV workshop~\cite{beliv}.
 
 \section{List of Participants and Invitees}
 \label{sec:invitees}
@@ -304,13 +304,16 @@ conference: roughly August 15th.
 
 \paragraph*{Carlos Scheidegger} is an Assistant Professor in the Department of Computer Science at the University of Arizona since 2014. Prior to joining the Arizona faculty, Carlos worked at AT\&T Research from 2009 to 2014, where he helped develop award-winning, open-source techniques for massive data sources (http://nanocubes.net). His current research interests are in the intersection of large-scale data analysis, information visualization, data management, and software infrastructure for scientific collaboration. His research has received multiple awards at top venues in data visualization (IEEE InfoVis, IEEE SciVis, EuroVis).
 
-\bibliographystyleorgref{plain}
-\bibliographyorgref{orgref}
+%% \bibliographystyleorgref{plain}
+%% \bibliographyorgref{orgref}
 
-\bibliographystyleref{plain}
-\bibliographyref{ref}
+%% \bibliographystyleref{plain}
+%% \bibliographyref{ref}
 
-%\bibliographystyle{abbrv}
-%\bibliography{paper}
+%% \bibliographystyleref{plain}
+%% \bibliographyref{orgref}
+\bibliographystyle{plain}
+\bibliography{paper}
+
 \end{document}
 
